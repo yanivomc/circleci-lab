@@ -32,14 +32,17 @@ jobs:
 
         
       # run tests!
-      test:
-        overide:
-          - python -m unittest Persontest
+      - run:
+          name: run tests
+          command: |
+            #. venv/bin/activate
+            python --version
+            python -m unittest Persontest
         
-        post:
-          - coverage run Person.py
-          - coverage report
-          - coveralls
+        - run:
+          coverage run Person.py
+          coverage report
+          coveralls
 
       - store_artifacts:
           path: test-reports
