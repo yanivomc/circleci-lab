@@ -32,13 +32,11 @@ jobs:
 
         
       # run tests!
-      - run:
-          name: run tests
-          command: |
-            #. venv/bin/activate
-            python --version
-            python -m unittest Persontest
-          post:
+      test:
+        overide:
+          - python -m unittest Persontest
+        
+        post:
           - coverage run Person.py
           - coverage report
           - coveralls
