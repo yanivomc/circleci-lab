@@ -37,7 +37,14 @@ jobs:
           command: |
             #. venv/bin/activate
             python --version
-            python -m unittest PersonTest.Test
+            python -m unittest Persontest
+          
+          name: coverage and reports
+          command: |
+            #. venv/bin/activate
+            coverage run Person.py 
+            coverage report
+            coveralls
 
       - store_artifacts:
           path: test-reports
