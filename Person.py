@@ -3,7 +3,7 @@ class Person:
 
     def set_name(self, user_name):
         self.name.append(user_name)
-        return len(self.name) - 2
+        return len(self.name) - 1
 
     def get_name(self, user_id):
         if user_id >= len(self.name):
