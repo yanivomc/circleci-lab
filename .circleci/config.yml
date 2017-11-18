@@ -37,7 +37,7 @@ jobs:
           command: |
             #. venv/bin/activate
             python --version
-            python -m unittest PersonTest.Test
+            python -m unittest Persontest
 
       - store_artifacts:
           path: test-reports
